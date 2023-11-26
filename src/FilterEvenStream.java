@@ -8,17 +8,18 @@ public class FilterEvenStream {
     public static void main(String[] args) {
         int[] array = {1, 4, 5, 7, 21, 11, 55, 42, 38, 59, 62};
 
+        //converting array to list
         List<Integer> list = Arrays.stream(array).boxed().collect(Collectors.toList());
 
-        System.out.println(list);
+        System.out.println("Before filter out the even number : " + list);
 
         ArrayList<Integer> filterList = filterEvenNumber((ArrayList<Integer>) list);
-        System.out.println("List of even number after filter out using Stream API : " + Collections.singletonList(filterList));
+        System.out.println("List of even number after filter out : " + Collections.singletonList(filterList));
     }
 
     //filter using stream API
     public static ArrayList<Integer> filterEvenNumber(ArrayList<Integer> integerArrayList) {
-        return (ArrayList<Integer>) integerArrayList.stream().filter(I -> I % 2 == 0).collect(Collectors.toList());
+        return (ArrayList<Integer>) integerArrayList.stream().filter(i -> i % 2 == 0).collect(Collectors.toList());
     }
 
 }
