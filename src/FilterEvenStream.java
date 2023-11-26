@@ -11,10 +11,10 @@ public class FilterEvenStream {
         //converting array to list
         List<Integer> list = Arrays.stream(array).boxed().collect(Collectors.toList());
 
-        System.out.println("Before filter out the even number : " + list);
+        System.out.println("Before filter out the even number : " + list); //[1, 4, 5, 7, 21, 11, 55, 42, 38, 59, 62]
 
         ArrayList<Integer> filterList = filterEvenNumber((ArrayList<Integer>) list);
-        System.out.println("List of even number after filter out : " + Collections.singletonList(filterList));
+        System.out.println("List of even number after filter out : " + Collections.singletonList(filterList)); //[[4, 42, 38, 62]]
     }
 
     //filter using stream API
